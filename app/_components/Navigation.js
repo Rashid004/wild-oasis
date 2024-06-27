@@ -29,9 +29,14 @@ export default async function Navigation() {
           {session?.user?.image ? (
             <Link
               href="/account"
-              className="hover:text-accent-400 transition-colors"
+              className="hover:text-accent-400 transition-colors flex items-center gap-4"
             >
-              <img src={session.user.image} alt={session.user.name} />
+              <img
+                className="h-8 rounded-full"
+                src={session.user.image}
+                alt={session.user.name}
+                referrerPolicy="no-referrer"
+              />
               <span>Guest area</span>
             </Link>
           ) : (
