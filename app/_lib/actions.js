@@ -33,12 +33,11 @@ export async function updateGuest(formData) {
   revalidatePath("/account/profile");
 }
 
-export async function deleteReservation(bookingId) {
+export async function deleteBooking(bookingId) {
   const session = await auth();
-  if (!session) throw new Error("You must be loged in");
+  if (!session) throw new Error("You must be logged in");
 
   const guestBookings = await getBookings(session.user.guestId);
-
   const guestBookingIds = guestBookings.map((booking) => booking.id);
 
   if (!guestBookingIds.includes(bookingId))
@@ -51,7 +50,7 @@ export async function deleteReservation(bookingId) {
 
   if (error) throw new Error("Booking could not be deleted");
 
-  revalidatePath("/account/reservation");
+  revalidatePath("/account/reservations");
 }
 
 export async function updateBooking(formData) {
@@ -86,7 +85,7 @@ export async function updateBooking(formData) {
   if (error) throw new Error("Booking could not be updated");
 
   // 6) Revalidation
-  // revalidatePath(`/account/reservations/edit/${bookingId}`);
+  revalidatePath(`/account/reservations/edit/${bookingId}`);
   revalidatePath("/account/reservations");
 
   // 7) Redirecting
