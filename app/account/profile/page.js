@@ -12,9 +12,6 @@ export default async function Page() {
   const session = await auth();
 
   const guest = await getGuest(session.user.email);
-  // CHANGE
-  const countryFlag = "pt.jpg";
-  const nationality = "portugal";
 
   return (
     <div>
