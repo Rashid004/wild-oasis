@@ -91,14 +91,14 @@ function SideNavigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="z-30 fixed inset-x-0 bottom-0 lg:relative lg:w-72 bg-primary-800 border-t lg:border-t-0 border-r border-primary-900 lg:border-r">
-      <ul className="flex lg:flex-col justify-around lg:justify-start lg:h-full text-lg gap-2">
+    <nav className="z-30 bg-primary-900 border-b lg:border-b-0 lg:border-r border-primary-800">
+      <ul className="flex lg:flex-col justify-around lg:justify-start lg:h-full text-lg gap-2 p-4 lg:p-6">
         {navLinks.map((link) => (
           <li key={link.name} className="flex items-center">
             <Link
               className={`${
-                pathname === link.href ? "bg-primary-900 text-primary-100 " : ""
-              } flex items-center py-3 px-4 hover:bg-primary-700 hover:text-primary-100 transition-colors font-semibold text-primary-200 rounded-md w-full gap-4`}
+                pathname === link.href ? "bg-primary-800 text-primary-100 " : ""
+              } flex items-center py-3 px-4 hover:bg-primary-700 hover:text-primary-100 transition-colors font-semibold text-primary-200 w-full gap-4`}
               href={link.href}
             >
               {link.icon}
