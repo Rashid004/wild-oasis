@@ -1,5 +1,3 @@
-/** @format */
-
 import Image from "next/image";
 import bg from "@/public/bg.png";
 import Link from "next/link";
@@ -26,7 +24,7 @@ export default function Home() {
           href="/cabins"
           className="inline-block bg-accent-500 px-4 py-2 sm:px-5 sm:py-3 md:px-6 md:py-4 lg:px-8 lg:py-5 text-primary-800 text-sm sm:text-base md:text-lg lg:text-xl font-semibold hover:bg-accent-600 transition-all duration-300 ease-in-out"
         >
-          Explore luxury cabins
+          Explore Luxury Cabins
         </Link>
       </div>
     </main>
